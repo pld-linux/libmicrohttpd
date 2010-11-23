@@ -1,12 +1,16 @@
+#
+# Conditional build
 %bcond_with	tests
+#
 Summary:	Embeded HTTP server library
+Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	0.4.2
+Version:	0.9.3
 Release:	1
 License:	LGPL
 Group:		Libraries
-Source0:	ftp://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	2853d8f32417e3c5f3b18fda38f96e52
+Source0:	http://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
+# Source0-md5:	a6c7dae57c51afd648b45a526098429a
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
@@ -18,16 +22,24 @@ BuildRequires:	curl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GNU libmicrohttpd is a small C library that is supposed to make it easy to run
-an HTTP server as part of another application. 
+GNU libmicrohttpd is a small C library that is supposed to make it
+easy to run an HTTP server as part of another application.
+
+%description -l pl.UTF-8
+GNU libmicrohttpd jest małą biblioteką C, w założeniu umożliwiającą
+uruchomić serwer HTTP jako część innej aplikacji.
 
 %package devel
 Summary:	Header files to develop libmicrohttpd applications
+Summary(pl.UTF-8):	Pliki nagłówkowe do rozwijania aplikacji libmicrohttpd
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files to develop libmicrohttpd applications.
+
+%description devel -l pl.UTF-8
+Pliki nagłówkowe do rozwijania aplikacji libmicrohttpd.
 
 %package static
 Summary:	Static libmicrohttpd libraries
@@ -56,7 +68,7 @@ Biblioteka statyczna libmicrohttpd.
 	--enable-client-side \
 %endif
 	--enable-https \
-	--disable-messages \
+	--disable-messages
 
 %{__make}
 %if %{with tests}
@@ -85,9 +97,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README 
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libmicrohttpd.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmicrohttpd.so.5
+%attr(755,root,root) %ghost %{_libdir}/libmicrohttpd.so.10
 
 %files devel
 %defattr(644,root,root,755)
