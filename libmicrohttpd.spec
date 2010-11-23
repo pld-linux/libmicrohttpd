@@ -27,11 +27,11 @@ easy to run an HTTP server as part of another application.
 
 %description -l pl.UTF-8
 GNU libmicrohttpd jest małą biblioteką C, w założeniu umożliwiającą
-uruchomić serwer HTTP jako część innej aplikacji.
+uruchomienie serwera HTTP jako część innej aplikacji.
 
 %package devel
 Summary:	Header files to develop libmicrohttpd applications
-Summary(pl.UTF-8):	Pliki nagłówkowe do rozwijania aplikacji libmicrohttpd
+Summary(pl.UTF-8):	Pliki nagłówkowe do rozwijania aplikacji używających libmicrohttpd
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -39,7 +39,7 @@ Requires:	%{name} = %{version}-%{release}
 Header files to develop libmicrohttpd applications.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe do rozwijania aplikacji libmicrohttpd.
+Pliki nagłówkowe do rozwijania aplikacji używających libmicrohttpd.
 
 %package static
 Summary:	Static libmicrohttpd libraries
