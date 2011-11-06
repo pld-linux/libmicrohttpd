@@ -1,23 +1,26 @@
 #
 # Conditional build
-%bcond_with	tests
+%bcond_with	tests	# perform "make check"
 #
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	0.9.15
+Version:	0.9.16
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	fb726a48095cc6b25c245dbc27ea76b0
+# Source0-md5:	e1240c6ae383b5be89431932f181898a
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-missing-files.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	libgcrypt-devel >= 1.2.4
 BuildRequires:	libtool
+BuildRequires:	texinfo
 %if %{with tests}
-BuildRequires:	curl-devel
+BuildRequires:	curl-devel >= 7.16.4
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -27,7 +30,7 @@ easy to run an HTTP server as part of another application.
 
 %description -l pl.UTF-8
 GNU libmicrohttpd jest małą biblioteką C, w założeniu umożliwiającą
-uruchomienie serwera HTTP jako część innej aplikacji.
+uruchomienie serwera HTTP jako części innej aplikacji.
 
 %package devel
 Summary:	Header files to develop libmicrohttpd applications
@@ -55,6 +58,8 @@ Biblioteka statyczna libmicrohttpd.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -105,6 +110,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libmicrohttpd.la
 %{_includedir}/microhttpd.h
 %{_infodir}/microhttpd.info*
+%{_infodir}/microhttpd-tutorial.info*
 %{_mandir}/man3/libmicrohttpd.3*
 %{_pkgconfigdir}/libmicrohttpd.pc
 
