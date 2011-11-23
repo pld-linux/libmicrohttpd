@@ -5,12 +5,12 @@
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	0.9.16
+Version:	0.9.17
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	e1240c6ae383b5be89431932f181898a
+# Source0-md5:	d6802049c806e903ef1fa9c5b847e555
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-missing-files.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
