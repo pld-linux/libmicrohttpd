@@ -16,6 +16,7 @@ Patch1:		%{name}-missing-files.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
+BuildRequires:	gnutls-devel
 BuildRequires:	libgcrypt-devel >= 1.2.4
 BuildRequires:	libtool
 BuildRequires:	texinfo
@@ -37,6 +38,8 @@ Summary:	Header files to develop libmicrohttpd applications
 Summary(pl.UTF-8):	Pliki nagłówkowe do rozwijania aplikacji używających libmicrohttpd
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	gnutls-devel
+Requires:	libgcrypt-devel >= 1.2.4
 
 %description devel
 Header files to develop libmicrohttpd applications.
