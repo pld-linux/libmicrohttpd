@@ -1,28 +1,28 @@
---- libmicrohttpd-0.9.16/doc/microhttpd.texi.orig	2011-09-28 08:37:02.000000000 +0200
-+++ libmicrohttpd-0.9.16/doc/microhttpd.texi	2011-11-06 06:31:12.786669338 +0100
-@@ -22,9 +22,9 @@
- GNU libmicrohttpd is a GNU package.
+--- libmicrohttpd-0.9.23/doc/libmicrohttpd.texi.orig	2012-11-16 19:47:41.137911245 +0100
++++ libmicrohttpd-0.9.23/doc/libmicrohttpd.texi	2012-11-16 20:12:18.761213783 +0100
+@@ -25,9 +25,9 @@
+ @end quotation
  @end copying
  
--@dircategory GNU Libraries
+-@dircategory Software libraries
 +@dircategory Libraries:
  @direntry
--* libmicrohttpd: (microhttpd).  Embedded HTTP server library.
-+* libmicrohttpd: (microhttpd).		Embedded HTTP server library
+-* libmicrohttpd: (libmicrohttpd).       Embedded HTTP server library.
++* libmicrohttpd: (libmicrohttpd).	Embedded HTTP server library
  @end direntry
  
  @c
---- libmicrohttpd-0.9.16/doc/microhttpd-tutorial.texi.orig	2011-11-04 10:02:56.000000000 +0100
-+++ libmicrohttpd-0.9.16/doc/microhttpd-tutorial.texi	2011-11-06 06:31:34.976670082 +0100
-@@ -7,9 +7,9 @@
- @set VERSION 0.9.16
- @settitle A tutorial for GNU libmicrohttpd
+--- libmicrohttpd-0.9.23/doc/libmicrohttpd-tutorial.texi.orig	2012-11-16 19:47:41.141244578 +0100
++++ libmicrohttpd-0.9.23/doc/libmicrohttpd-tutorial.texi	2012-11-16 20:14:21.744544555 +0100
+@@ -13,9 +13,9 @@
+ @syncodeindex pg cp
+ @syncodeindex tp cp
  
--@dircategory GNU Libraries
+-@dircategory Software libraries
 +@dircategory Libraries:
  @direntry
--* libmicrohttpdtutorial: (microhttpd).  A tutorial for GNU libmicrohttpd.
-+* libmicrohttpdtutorial: (microhttpd).	A tutorial for GNU libmicrohttpd
+-* libmicrohttpdtutorial: (libmicrohttpd).       A tutorial for GNU libmicrohttpd.
++* libmicrohttpdtutorial: (libmicrohttpd).  A tutorial for GNU libmicrohttpd
  @end direntry
  
  @copying
