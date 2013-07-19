@@ -1,0 +1,10 @@
+--- libmicrohttpd-0.9.28/src/microspdy/Makefile.am.orig	2013-07-08 11:49:30.000000000 +0200
++++ libmicrohttpd-0.9.28/src/microspdy/Makefile.am	2013-07-19 20:49:27.404186627 +0200
+@@ -28,6 +28,7 @@
+   alstructures.c alstructures.h 
+ 
+ 
++libmicrospdy_la_LIBADD = -lssl -lcrypto -lz
+ libmicrospdy_la_LDFLAGS = \
+   $(SPDY_LIB_LDFLAGS) 
+ 

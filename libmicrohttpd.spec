@@ -5,19 +5,23 @@
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	0.9.27
+Version:	0.9.28
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	a10496b7f1b495aaf6897584da52f51b
+# Source0-md5:	16c3cb66c839c6f929677471401a5b53
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-messages.patch
+Patch2:		%{name}-link.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	gnutls-devel >= 2.8.6
 BuildRequires:	libgcrypt-devel >= 1.2.4
 BuildRequires:	libtool
+# for microspdy
+BuildRequires:	openssl-devel
 BuildRequires:	texinfo
 %if %{with tests}
 BuildRequires:	curl-devel >= 7.16.4
@@ -41,6 +45,7 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gnutls-devel >= 2.8.6
 Requires:	libgcrypt-devel >= 1.2.4
+Requires:	openssl-devel
 
 %description devel
 Header files to develop libmicrohttpd applications.
@@ -63,6 +68,8 @@ Biblioteka statyczna libmicrohttpd.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -89,6 +96,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{_bindir}/demo
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -104,14 +113,20 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{_bindir}/microspdy2http
 %attr(755,root,root) %{_libdir}/libmicrohttpd.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmicrohttpd.so.10
+%attr(755,root,root) %{_libdir}/libmicrospdy.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmicrospdy.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libmicrohttpd.so
+%attr(755,root,root) %{_libdir}/libmicrospdy.so
 %{_libdir}/libmicrohttpd.la
+%{_libdir}/libmicrospdy.la
 %{_includedir}/microhttpd.h
+%{_includedir}/microspdy.h
 %{_infodir}/libmicrohttpd.info*
 %{_infodir}/libmicrohttpd-tutorial.info*
 %{_mandir}/man3/libmicrohttpd.3*
@@ -120,3 +135,4 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libmicrohttpd.a
+%{_libdir}/libmicrospdy.a
