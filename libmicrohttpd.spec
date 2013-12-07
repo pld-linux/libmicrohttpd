@@ -5,12 +5,12 @@
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	0.9.31
+Version:	0.9.32
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	40453603aef1a8c0bb4957ec65ab888d
+# Source0-md5:	29dcc1c201c36044be2c3f816c64a5bb
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-link.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
@@ -18,9 +18,10 @@ BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	gnutls-devel >= 2.8.6
 BuildRequires:	libgcrypt-devel >= 1.2.4
+BuildRequires:	libmagic-devel
 BuildRequires:	libtool
 # for microspdy
-BuildRequires:	openssl-devel
+BuildRequires:	openssl-devel >= 0.9.8
 BuildRequires:	texinfo
 %if %{with tests}
 BuildRequires:	curl-devel >= 7.16.4
