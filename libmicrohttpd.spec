@@ -5,14 +5,15 @@
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	0.9.37
-Release:	2
+Version:	0.9.41
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	fdf1e0534d83bbf2663f80fa7873be77
+# Source0-md5:	4a9094d6acca69a9da61b170d9dd33ae
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-link.patch
+Patch2:		%{name}-sh.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake >= 1:1.10
@@ -70,6 +71,7 @@ Biblioteka statyczna libmicrohttpd.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -96,7 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_bindir}/demo
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libmicro*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -123,8 +126,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libmicrohttpd.so
 %attr(755,root,root) %{_libdir}/libmicrospdy.so
-%{_libdir}/libmicrohttpd.la
-%{_libdir}/libmicrospdy.la
 %{_includedir}/microhttpd.h
 %{_includedir}/microspdy.h
 %{_infodir}/libmicrohttpd.info*
