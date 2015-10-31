@@ -8,3 +8,13 @@
  libmicrospdy_la_LDFLAGS = \
    $(SPDY_LIB_LDFLAGS) 
  
+--- libmicrohttpd-0.9.44/src/examples/mhd2spdy_spdy.c.orig	2015-10-30 22:10:36.420093201 +0100
++++ libmicrohttpd-0.9.44/src/examples/mhd2spdy_spdy.c	2015-10-30 22:15:31.610087152 +0100
+@@ -31,6 +31,7 @@
+  * @author Andrey Uzunov
+  */
+ 
++#include "platform_interface.h"
+ #include "mhd2spdy_structures.h"
+ #include "mhd2spdy_spdy.h"
+ #include "mhd2spdy_http.h"
