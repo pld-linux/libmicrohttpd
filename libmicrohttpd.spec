@@ -15,6 +15,7 @@ Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.10
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	gnutls-devel >= 2.8.6
 BuildRequires:	libgcrypt-devel >= 1.2.4
 BuildRequires:	libmagic-devel
