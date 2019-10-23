@@ -1,0 +1,12 @@
+--- libmicrohttpd-0.9.67/src/microhttpd/daemon.c.orig	2019-10-17 16:55:53.000000000 +0200
++++ libmicrohttpd-0.9.67/src/microhttpd/daemon.c	2019-10-23 05:37:17.445371980 +0200
+@@ -3266,8 +3266,8 @@
+     MHD_DLOG (daemon,
+               _ ("Failed to disable TCP Nagle on socket: %s\n"),
+               MHD_socket_last_strerr_ ());
+-  }
+ #endif
++  }
+ #endif
+ #if ! defined(USE_ACCEPT4) || ! defined(HAVE_SOCK_NONBLOCK)
+   if (! MHD_socket_nonblocking_ (s))
