@@ -12,8 +12,8 @@
  @end direntry
  
  @c
---- libmicrohttpd-0.9.23/doc/libmicrohttpd-tutorial.texi.orig	2012-11-16 19:47:41.141244578 +0100
-+++ libmicrohttpd-0.9.23/doc/libmicrohttpd-tutorial.texi	2012-11-16 20:14:21.744544555 +0100
+--- libmicrohttpd-1.0.0/doc/libmicrohttpd-tutorial.texi.orig	2024-02-19 22:03:17.486342411 +0100
++++ libmicrohttpd-1.0.0/doc/libmicrohttpd-tutorial.texi	2024-02-19 22:04:11.862714495 +0100
 @@ -13,9 +13,9 @@
  @syncodeindex pg cp
  @syncodeindex tp cp
@@ -21,8 +21,8 @@
 -@dircategory Software libraries
 +@dircategory Libraries:
  @direntry
--* libmicrohttpdtutorial: (libmicrohttpd).       A tutorial for GNU libmicrohttpd.
-+* libmicrohttpdtutorial: (libmicrohttpd).  A tutorial for GNU libmicrohttpd
+-* libmicrohttpdtutorial: (libmicrohttpd-tutorial).       A tutorial for GNU libmicrohttpd.
++* libmicrohttpdtutorial: (libmicrohttpd-tutorial).	A tutorial for GNU libmicrohttpd
  @end direntry
  
  @copying
