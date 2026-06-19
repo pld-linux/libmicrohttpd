@@ -5,12 +5,12 @@
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	1.0.3
+Version:	1.0.5
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	9fc5946625d54c85f573be05f9eec935
+# Source0-md5:	d86911728a096d833785b88f5625ba40
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.64
@@ -111,12 +111,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_libdir}/libmicrohttpd.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmicrohttpd.so.12
+%{_libdir}/libmicrohttpd.so.*.*.*
+%ghost %{_libdir}/libmicrohttpd.so.12
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libmicrohttpd.so
+%{_libdir}/libmicrohttpd.so
 %{_includedir}/microhttpd.h
 %{_infodir}/libmicrohttpd.info*
 %{_infodir}/libmicrohttpd-tutorial.info*
