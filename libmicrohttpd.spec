@@ -1,16 +1,16 @@
 #
 # Conditional build
-%bcond_with	tests	# perform "make check"
+%bcond_with	tests	# test suite
 #
 Summary:	Embeded HTTP server library
 Summary(pl.UTF-8):	Biblioteka wbudowanego serwera HTTP
 Name:		libmicrohttpd
-Version:	1.0.5
+Version:	1.0.6
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://ftp.gnu.org/gnu/libmicrohttpd/%{name}-%{version}.tar.gz
-# Source0-md5:	d86911728a096d833785b88f5625ba40
+# Source0-md5:	4c48c1807d81de06831b42cb68900f3d
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/libmicrohttpd/
 BuildRequires:	autoconf >= 2.64
