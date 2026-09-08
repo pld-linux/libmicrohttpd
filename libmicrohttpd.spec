@@ -25,7 +25,7 @@ BuildRequires:	texinfo
 %if %{with tests}
 BuildRequires:	curl-devel >= 7.16.4
 %endif
-Requires:	gnutls >= 2.8.6
+Requires:	gnutls-libs >= 2.8.6
 Requires:	libgcrypt >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
