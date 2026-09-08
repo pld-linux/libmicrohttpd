@@ -25,8 +25,8 @@ BuildRequires:	texinfo
 %if %{with tests}
 BuildRequires:	curl-devel >= 7.16.4
 %endif
-Requires:	gnutls-libs >= 2.8.6
-Requires:	libgcrypt >= 1.2.4
+Requires:	gnutls-libs%{?_isa} >= 2.8.6
+Requires:	libgcrypt%{?_isa} >= 1.2.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,10 +41,10 @@ uruchomienie serwera HTTP jako części innej aplikacji.
 Summary:	Header files to develop libmicrohttpd applications
 Summary(pl.UTF-8):	Pliki nagłówkowe do rozwijania aplikacji używających libmicrohttpd
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
-Requires:	gnutls-devel >= 2.8.6
-Requires:	libgcrypt-devel >= 1.2.4
-Requires:	openssl-devel
+Requires:	%{name}%{?_isa} = %{version}-%{release}
+Requires:	gnutls-devel%{?_isa} >= 2.8.6
+Requires:	libgcrypt-devel%{?_isa} >= 1.2.4
+Requires:	openssl-devel%{?_isa}
 
 %description devel
 Header files to develop libmicrohttpd applications.
@@ -56,7 +56,7 @@ Pliki nagłówkowe do rozwijania aplikacji używających libmicrohttpd.
 Summary:	Static libmicrohttpd libraries
 Summary(pl.UTF-8):	Biblioteka statyczna libmicrohttpd
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel%{?_isa} = %{version}-%{release}
 
 %description static
 Static libmicrohttpd libraries.
